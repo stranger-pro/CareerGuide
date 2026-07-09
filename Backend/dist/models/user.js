@@ -29,3 +29,4 @@ schema.methods.canMakeRequest = function () {
     return this.hasProAccess() || this.freeRequestsUsed < 3;
 };
 const user = mongoose.model("User", schema);
+export default user;
