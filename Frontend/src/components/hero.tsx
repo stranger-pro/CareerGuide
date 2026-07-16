@@ -17,14 +17,14 @@ const Hero = () => {
 
       <div className="inline-flex items-center gap-2 feature-pill mb-6 animate-fade-in">
         <Zap size={11} className="text-emerald-400" />
-        <span>AI-Powered Career Platform</span>
+        <span>AI-Powered CareerGuide Platform</span>
       </div>
 
       <h1
         className="text-4xl md:text-6xl lg:text-7xl font-extrabold leading-[1.08] tracking-tight max-w-4xl mb-6 animate-slide-up"
         style={{ fontFamily: "'Syne', sans-serif" }}
       >
-        Land Your Dream Job
+        Find Your Career Path
         <br />
         <span className="text-gradient">Faster with AI</span>
       </h1>
@@ -32,8 +32,7 @@ const Hero = () => {
         className="text-white/45 text-lg md:text-xl max-w-xl leading-relaxed mb-10 animate-slide-up"
         style={{ animationDelay: "0.1s" }}
       >
-        Analyse your resume, get an ATS score, discover the right jobs, build a
-        stunning resume, and ace every interview - all in one place.
+        Analyse your resume, get an ATS score, discover the right jobs, and ace every interview - all in one place.
       </p>
 
       <div

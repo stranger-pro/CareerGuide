@@ -12,14 +12,14 @@ const Features = () => {
           className="text-3xl md:text-5xl font-extrabold tracking-tight"
           style={{ fontFamily: "'Syne', sans-serif" }}
         >
-          Four tools. One <span className="text-gradient">career leap.</span>
+          Three tools. One <span className="text-gradient">career leap.</span>
         </h2>
         <p className="text-white/40 mt-4 max-w-xl mx-auto">
           From your resume to the offer letter, we've got every step covered.
         </p>
       </div>
 
-      <div className="grid md:grid-cols-2 gap-6">
+      <div className="grid md:grid-cols-3 gap-6">
         {features.map(({ icon: Icon, color, glow, title, desc, bullets }) => (
           <div
             key={title}

@@ -6,9 +6,9 @@ const Footer = () => {
         style={{ fontFamily: "'Syne', sans-serif" }}
         className="font-bold text-white/40 text-sm"
       >
-        CareerAI
+        CareerGuide
       </span>
-      <span>©️ {new Date().getFullYear()} CareerAI. All rights reserved.</span>
+      <span>©️ {new Date().getFullYear()} CareerGuide. All rights reserved.</span>
       <div className="flex gap-5">
         {["Privacy", "Terms", "Contact"].map((i) => (
           <a key={i} href="#" className="hover:text-white/60 transition-colors">

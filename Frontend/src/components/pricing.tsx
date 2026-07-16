@@ -7,6 +7,12 @@ import axios from "axios";
 import { server } from "../main";
 import toast from "react-hot-toast";
 
+declare global {
+  interface Window {
+    Razorpay: any;
+  }
+}
+
 function StatusBadge() {
   const { isAuth, user } = useAppData();
   if (!isAuth) return null;
@@ -72,12 +78,71 @@ function PlanCTA({
 
   const [loading, setLoading] = useState(false);
 
-  const handleSubscribe = async () => {
-    if(!isAuth){
-        navigate("/login");
-        return;
+  const handleSubscribe = async (price: any) => {
+    const token = localStorage.getItem("token");
+    setLoading(true);
+    let duration;
+
+    if (price === "₹299") {
+      duration = 1;
+    } else {
+      duration = 6;
     }
-    console.log("ok");
+
+    const {
+      data: { order },
+    } = await axios.post(
+      `${server}/api/payment/checkout`,
+      { duration },
+      {
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+      }
+    );
+    
+    const options = {
+      key: "rzp_test_TC8ll6NSxPL5Ab", 
+      amount: order.amount, 
+      currency: "INR",
+      name: "Career Guide", 
+      description: "Find job easily",
+      order_id: order.id,
+
+      handler: async function (response: any) {
+        const { razorpay_order_id, razorpay_payment_id, razorpay_signature } =
+          response;
+
+        try {
+          const { data } = await axios.post(
+            `${server}/api/payment/verify`,
+            {
+              razorpay_order_id,
+              razorpay_payment_id,
+              razorpay_signature,
+            },
+            {
+              headers: {
+                Authorization: `Bearer ${token}`,
+              },
+            }
+          );
+
+          toast.success(data.message);
+          setUser(data.updatedUser);
+          navigate("/account");
+          setLoading(false);
+        } catch (error: any) {
+          setLoading(false);
+          toast.error(error.response.data.message);
+        }
+      },
+      theme: {
+        color: "#F#7254",
+      },
+    };
+    const razorpay = new window.Razorpay(options);
+    razorpay.open();
   };
 
   return (
@@ -87,14 +152,13 @@ function PlanCTA({
           ? "btn-primary"
           : "bg-white/6 hover:bg-white/10 boder border-white/10 text-white"
       }`}
-      onClick={() => handleSubscribe()}
+      onClick={() => handleSubscribe(plan.price)}
       disabled={loading}
     >
       {loading ? "Please Wait..." : plan.cta}
     </button>
   );
 }
-
 
 const Pricing = () => {
   return (
@@ -183,4 +247,4 @@ const Pricing = () => {
   );
 };
 
-export default Pricing
+export default Pricing;

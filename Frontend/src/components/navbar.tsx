@@ -11,12 +11,10 @@ const Navbar = () => {
   return (
     <nav className="fixed top-0 inset-x-0 z-50 flex items-center justify-between px-6 md:px-12 py-4 border-b border-white/6 bg-[#080b14]/80 backdrop-blur-xl">
         <Link to={"/"} className="flex items-center gap-2.5">
-            <div className="w-8 h-8 rounded-lg bg-linear-to-br from-indigo-500 to-emerald-400 flex caret-indigo-50 justify-center shadow-lg shadow-indigo-500/30 text-2xl">
-                📚
-            </div>
+            
             <span className="font-bold text-lg tracking-tight"
                 style={{ fontFamily: "'Syne', sans-serif" }}>
-                Career<span className="text-gradient">AI</span>
+                Career<span className="text-gradient">Guide</span>
             </span>
         </Link>
 
@@ -29,11 +27,7 @@ const Navbar = () => {
                 JobMatcher
             </Link>
 
-            <Link to={"/resumebuilder"}
-            className="hover:text-white transition-colors"
-            >
-             ResumeBuilder
-            </Link>
+            
 
             <Link to={"/interviewprep"}
             className="hover:text-white transition-colors"
@@ -93,12 +87,6 @@ const Navbar = () => {
             className="hover:text-white transition-colors"
           >
             JobMatcher
-          </Link>
-          <Link
-            to={"/resumebuilder"}
-            className="hover:text-white transition-colors"
-          >
-            ResumeBuilder
           </Link>
           <Link
             to={"/interviewprep"}

@@ -8,6 +8,9 @@ import { useAppData } from "./context/AppContex"
 import Loading from "./components/loading"
 import PublicRoutes from "./components/PublicRoutes"
 import ProtectedRoutes from "./components/ProtectedRoutes"
+import AnalysePage from "./pages/Analyse"
+import JobMatcherPage from "./pages/JobMatcher"
+import InterviewPrep from "./pages/InterviewPrep"
 
 const App = () => {
   const {loading} = useAppData();
@@ -24,6 +27,9 @@ const App = () => {
         </Route>
         <Route element={<ProtectedRoutes/>} >
           <Route path="/account" element={<Account/>}/>
+          <Route path="/analyse" element={<AnalysePage/>}/>
+          <Route path="/jobmatcher" element={<JobMatcherPage/>}/>
+          <Route path="/interviewprep" element={<InterviewPrep/>}/>
         </Route>
     </Routes>
     <Footer/>
