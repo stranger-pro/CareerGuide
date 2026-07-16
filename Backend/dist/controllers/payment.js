@@ -1,5 +1,5 @@
 import { instance } from "../index.js";
-import TryCatch from "../middlewares/trycatch.js";
+import TryCatch from "../middlewares/tryCatch.js";
 import User from "../models/user.js";
 import crypto from "crypto";
 export const checkOut = TryCatch(async (req, res) => {

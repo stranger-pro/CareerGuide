@@ -1,5 +1,5 @@
 import { outh2Client } from "../config/googleconfig.js";
-import TryCatch from "../middlewares/trycatch.js";
+import TryCatch from "../middlewares/tryCatch.js";
 import axios from "axios";
 import User from "../models/user.js";
 import jwt from "jsonwebtoken";

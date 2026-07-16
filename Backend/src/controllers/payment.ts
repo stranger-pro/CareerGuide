@@ -1,6 +1,6 @@
 import { instance } from "../index.js";
 import { AuthenticatedRequest } from "../middlewares/isAuth.js";
-import TryCatch from "../middlewares/trycatch.js";
+import TryCatch from "../middlewares/tryCatch.js";
 import User from "../models/user.js";
 import crypto from "crypto";
 

@@ -1,6 +1,6 @@
 import { GoogleGenAI } from "@google/genai";
 import dotenv from "dotenv";
-import TryCatch from "../middlewares/trycatch.js";
+import TryCatch from "../middlewares/tryCatch.js";
 import { AuthenticatedRequest } from "../middlewares/isAuth.js";
 import User from "../models/user.js";
 import {
