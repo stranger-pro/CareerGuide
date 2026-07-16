@@ -2,7 +2,6 @@ import {
   BarChart2,
   Briefcase,
   Compass,
-  FileEdit,
   FileText,
   MessageSquare,
   ScanText,

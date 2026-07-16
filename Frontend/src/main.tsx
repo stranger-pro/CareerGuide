@@ -5,7 +5,7 @@ import App from './App.tsx'
 import { AppProvider } from './context/AppContex.tsx';
 import { GoogleOAuthProvider } from '@react-oauth/google';
 
-export const server = "http://localhost:5000";
+export const server = "https://careerguide-ye9d.onrender.com";
 
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
